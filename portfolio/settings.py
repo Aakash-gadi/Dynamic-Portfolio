@@ -79,15 +79,6 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'portfolio',
-#         'USER':'postgres',
-#         'PASSWORD':'1234',
-#         'HOST':'localhost'
-#     }
-# }
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG") == "True"
