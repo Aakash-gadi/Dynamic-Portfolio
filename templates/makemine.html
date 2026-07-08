@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make mine</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+        }
+        .container1{
+            display:flex;
+            {% comment %} align-items: center; {% endcomment %}
+            justify-content:center;
+        }
+        .container{
+            {% comment %} width: 40vw; {% endcomment %}
+            {% comment %} background-color:red; {% endcomment %}
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+    <div class="container">
+        
+        <h2>Profile</h2>
+        <form action="/makemine" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <input type="hidden" name="form_type" value="profile">
+            <label>Name: <input type="text" name="name"></label><br>
+            <label for=""> Image:
+                <input type="file" name="image" accept="image/*">
+            </label> <br>
+            <label>Role1: <input type="text" name="role1"></label><br>
+            <label>Role2: <input type="text" name="role2"></label><br>
+            <label>Role3: <input type="text" name="role3"></label><br>
+            <label>Email: <input type="text" name="email"></label><br>
+            <label>Phone Number: <input type="text" name="phone"></label><br>
+            <label>Profile: <input type="text" name="profile"></label><br>
+            <label>About Me: <input type="text" name="aboutme"></label><br>
+            <label>Summary: <input type="text" name="summary"></label><br>
+            <button type="submit">Save</button>
+        </form>
+        <br><br><br>
+        <h2>Projects</h2>
+        <form action="/makemine" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="projects">
+            <label>Name of the Project: <input type="text" name="name"></label><br>
+            <label>Description: <input type="text" name="description"></label><br>
+            <label>Link: <input type="text" name="link"></label><br>
+            <button type="submit">Save</button>
+        </form>
+        
+        <h2>Education</h2>
+        <form action="/makemine" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="education">
+            <label>University Name: <input type="text" name="name"></label><br>
+            <label>Year: <input type="text" name="year"></label><br>
+            <label>Address: <input type="text" name="address"></label><br>
+            <label>Description: <input type="text" name="description"></label><br>
+            <button type="submit">Save</button>
+        </form>
+        
+        <h2>Experience</h2>
+        <form action="/makemine" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="experience">
+            <label>Position: <input type="text" name="nameofposition"></label><br>
+            <label>Company: <input type="text" name="nameofcompany"></label><br>
+            <label>Years: <input type="text" name="years"></label><br>
+            <label>Description 1: <input type="text" name="description1"></label><br>
+            <label>Description 2: <input type="text" name="description2"></label><br>
+            <label>Description 3: <input type="text" name="description3"></label><br>
+            <button type="submit">Save</button>
+        </form>
+        
+        <h2>Skills</h2>
+        <form action="/makemine" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="skills">
+            <label>Skill: <input type="text" name="name"></label><br>
+            <label>Skill Rate: <input type="text" name="skillrate"></label><br>
+            <button type="submit">Save</button>
+        </form>
+        <form action="/makemine" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="done">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
